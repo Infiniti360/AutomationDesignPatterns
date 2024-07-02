@@ -6,10 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
 import com.qa.facade.PlaceOrderFacade;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FacadeDesignTest {
 	WebDriver driver;
@@ -17,7 +14,6 @@ public class FacadeDesignTest {
 
 	@BeforeTest
 	public void setUp() {
-		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
 		driver.manage().window().maximize();

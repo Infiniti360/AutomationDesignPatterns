@@ -8,14 +8,12 @@ import org.testng.annotations.Test;
 import com.qa.fluent.HomePage;
 import com.qa.fluent.LoginPage;
 import com.qa.fluent.RegistrationPage;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class FluentDesignTest {
 	WebDriver driver;
 	
 	@BeforeTest
 	public void setUp() {
-		WebDriverManager.chromedriver().setup();
 		driver=new ChromeDriver();
 		driver.get("http://automationpractice.com/index.php");
 	}
