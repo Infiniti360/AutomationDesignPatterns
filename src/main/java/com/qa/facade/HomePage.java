@@ -1,4 +1,5 @@
 package com.qa.facade;
+import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,7 +33,7 @@ public class HomePage {
 	}
 	
 	public void proceedToCheckOut(WebDriver driver) {
-		wait=new WebDriverWait(driver, 30);
+		wait=new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.visibilityOf(proceedToChkOut)).click();
 	}
 	
