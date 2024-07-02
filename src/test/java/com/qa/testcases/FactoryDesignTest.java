@@ -26,11 +26,13 @@ public class FactoryDesignTest {
 	public void beforeTest() {
 		driverManager = DriverManagerFactory.getManager(DriverType.EDGE);
 		driver=driverManager.getDriver();
+		driver.manage().window().maximize();
 	}
 
 	
 	@Test
 	public void verifyBStackDemoAddToCart() {
+		
 		driver.get("https://bstackdemo.com/");
 		List<WebElement> addToCartBtns = driver.findElements(By.cssSelector("div.shelf-item__buy-btn"));
 		addToCartBtns.get(0).click();
