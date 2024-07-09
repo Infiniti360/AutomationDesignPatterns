@@ -1,5 +1,6 @@
 package com.qa.testcases;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -33,7 +34,7 @@ public class SingletonDesignTest {
 		System.out.println("driver2: " + driver2);
 		driver2.get("https://bstackdemo.com/");
 		WebElement logo = driver2.findElement(By.cssSelector(" a.Navbar_logo__26S5Y"));
-		driver2.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver2.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		Assert.assertTrue(logo.isDisplayed());
 	}
 	

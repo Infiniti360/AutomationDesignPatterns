@@ -1,5 +1,6 @@
 package com.qa.testcases;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -37,7 +38,7 @@ public class FactoryDesignTest {
 		List<WebElement> addToCartBtns = driver.findElements(By.cssSelector("div.shelf-item__buy-btn"));
 		addToCartBtns.get(0).click();
 		WebElement chkoutbtn = driver.findElement(By.cssSelector("div.buy-btn"));
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 		Assert.assertTrue(chkoutbtn.isDisplayed());
 	}
 
@@ -51,7 +52,7 @@ public class FactoryDesignTest {
 	public void verifyBStackDemoLogo() {
 		driver.get("https://bstackdemo.com/");
 		WebElement logo = driver.findElement(By.cssSelector(" a.Navbar_logo__26S5Y"));
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		Assert.assertTrue(logo.isDisplayed());
 	}
 	

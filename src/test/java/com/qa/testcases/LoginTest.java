@@ -1,4 +1,5 @@
 package com.qa.testcases;
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -27,7 +28,7 @@ public class LoginTest{
 	public void validLogin() {
 		hp.clickSignIn();
 		lp.login("<username>", "<password>");
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		Assert.assertTrue(hp.logoutisDisplayed());
 	}	
 	@AfterTest
